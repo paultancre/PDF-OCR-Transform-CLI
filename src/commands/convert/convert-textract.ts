@@ -86,7 +86,7 @@ export const generateTextractTextLayer = (
                     // Run Textract OCR on the pdf
                     console.log(`Starting Textract OCR for ${pdfFilename}`);
                     exec(
-                      `aws textract start-document-text-detection --document-location "{\"S3Object\":{\"Bucket\":\"${bucketName}\",\"Name\":\"${pdfFilename}\"}}"`,
+                      `aws textract start-document-text-detection --document-location "{\"S3Object\":{\"Bucket\":\"${bucketName}\",\"Name\":\"${pdfFilename}\"}}" --debug`,
                       async (error, stdout) => {
                         if (error) {
                           throw error;
